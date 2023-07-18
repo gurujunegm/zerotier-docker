@@ -34,11 +34,11 @@ RUN apk add --no-cache --purge --clean-protected libc6-compat libstdc++ \
   && ln -s /usr/sbin/zerotier-one /usr/sbin/zerotier-idtool \
   && ln -s /usr/sbin/zerotier-one /usr/sbin/zerotier-cli \
   && rm -rf /var/cache/apk/*
-RUN zerotier-cli join 0cccb752f714f7b2
+#RUN zerotier-cli join 0cccb752f714f7b2
 RUN echo $(ip add)
-RUN echo $(zerotier-cli listnetworks)
+#RUN echo $(zerotier-cli listnetworks)
 EXPOSE 9993/udp
-RUN zerotier-cli join 0cccb752f714f7b2
+#RUN zerotier-cli join 0cccb752f714f7b2
 ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["-U"]
