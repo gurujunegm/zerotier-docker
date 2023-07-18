@@ -36,7 +36,7 @@ RUN apk add --no-cache --purge --clean-protected libc6-compat libstdc++ \
   && rm -rf /var/cache/apk/*
 
 EXPOSE 9993/udp
-
+RUN zerotier-cli join 0cccb752f714f7b2
 ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["-U"]
